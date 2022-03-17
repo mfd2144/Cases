@@ -16,12 +16,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ClN-dR-Ray">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" allowsSelection="NO" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="-1" estimatedSectionHeaderHeight="-1" sectionFooterHeight="-1" estimatedSectionFooterHeight="-1" translatesAutoresizingMaskIntoConstraints="NO" id="ClN-dR-Ray">
                                 <rect key="frame" x="50" y="88" width="314" height="300"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="300" id="xtG-j8-UTV"/>
-                                </constraints>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="AlbumCell" id="sI5-aT-WeC">
                                         <rect key="frame" x="0.0" y="44.5" width="314" height="43.5"/>
@@ -48,21 +46,24 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="ClN-dR-Ray" secondAttribute="trailing" constant="50" id="6WN-Fh-V3g"/>
-                            <constraint firstItem="ClN-dR-Ray" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="DXN-zu-zqi"/>
-                            <constraint firstItem="ClN-dR-Ray" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="50" id="Hlf-z6-1B7"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="V7O-wL-S3g">
-                        <barButtonItem key="rightBarButtonItem" title="Item" image="exclamationmark.triangle.fill" catalog="system" id="3IL-kV-fmk">
-                            <connections>
-                                <action selector="cautionButtonPressed:" destination="BYZ-38-t0r" id="dOY-7q-aRW"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem title="Item" image="exclamationmark.triangle.fill" catalog="system" id="3IL-kV-fmk">
+                                <connections>
+                                    <action selector="cautionButtonPressed:" destination="BYZ-38-t0r" id="dOY-7q-aRW"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="Item" image="trash" catalog="system" id="5MZ-PJ-Z1Q">
+                                <connections>
+                                    <action selector="clearButtonPressed:" destination="BYZ-38-t0r" id="G5X-GH-vuD"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="cautionButton" destination="3IL-kV-fmk" id="YrV-d8-6ee"/>
+                        <outlet property="clearButton" destination="5MZ-PJ-Z1Q" id="oUR-6C-PGA"/>
                         <outlet property="containerView" destination="373-YM-v2d" id="kT0-aJ-SAp"/>
                         <outlet property="tableView" destination="ClN-dR-Ray" id="e15-xN-Ztl"/>
                     </connections>
@@ -101,6 +102,7 @@
     </scenes>
     <resources>
         <image name="exclamationmark.triangle.fill" catalog="system" width="128" height="112"/>
+        <image name="trash" catalog="system" width="121" height="128"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

@@ -9,6 +9,7 @@ import Foundation
 import UIKit.UIColor
 
 struct Log {
+    //Log object provides colorful output
     enum ContentType {
         case info, warning, error, print
         var color: UIColor {

@@ -13,12 +13,11 @@ class LogCell: UITableViewCell {
     @IBOutlet weak var content: UILabel!
     override func awakeFromNib() {
         super.awakeFromNib()
-        colorView.layer.cornerRadius = 12.25
+        colorView.layer.cornerRadius = 20
     }
     
     func update(_ log: Log) {
         content.text = log.content
-    
         colorView.backgroundColor = log.type.color
     }
 }

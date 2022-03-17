@@ -10,7 +10,7 @@ import Foundation
 protocol LoggerDelegate:AnyObject {
     func logText(text:String)
 }
-// Logger catch print output and send to user as caution
+// Logger catch print output and send to user as output
 class Logger{
     weak var delegate:LoggerDelegate?
     init(){

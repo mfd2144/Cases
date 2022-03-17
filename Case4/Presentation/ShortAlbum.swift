@@ -8,7 +8,8 @@
 import Foundation
 import Case4Api
 
-struct ShortAlbum{
+ struct ShortAlbum{
+     // I create this class because it prevent any input from network layer to my view controller
     let artistName:String
     let genres:[String]
     
